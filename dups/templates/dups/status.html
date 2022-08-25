@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="centered">
+    <h1>Something went wrong.</h1> <br>
+    Duplicates search not possible! <br> <br>
+    Reason: <span style="color:orangered; font-size: 18px; font-weight:600">{{ comment }}
+        <br>
+    </span>
+    <form method="POST" action="{% url 'main' %}"> {% csrf_token %}
+        <button type="Submit" class="main-button">Back to Main</button>
+    </form>
+</div>
+{% endblock %}

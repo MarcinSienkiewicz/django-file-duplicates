@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: linear-gradient(120deg, #000000, #010755);
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        form input[type="text"]::placeholder {
+            color: rgb(107, 0, 0);
+            font-variant: small-caps;
+            font-weight: 800;
+            font-style: oblique;
+        }
+
+        form input[type="text"] {
+            background-color: azure;
+            padding: 5px;
+            border-radius: 5px;
+            width: 75%;
+            color: black;
+            margin-bottom: 5px;
+        }
+
+
+        form input[type="submit"] {
+            padding: 10px;
+            background-color: #010755;
+            color: white;
+            font-size: 17px;
+            font-weight: 800;
+            cursor: pointer;
+            width: 78%;
+            border: 1px solid white;
+            margin-bottom: 5px;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: lavender;
+            color: black;
+            border: 1px solid aquamarine;
+            transition: .5s;
+        }
+
+        .annotation {
+            font-style: oblique;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: darkorange
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            border-radius: 5px;
+            text-align: center;
+            margin: auto;
+            width: 30%;
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        .centered-red {
+            background-color: black;
+            margin-left: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 30%;
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        .main-button,
+        .main-button-red {
+            background-color: #010755;
+            color: white;
+            margin-top: 10px;
+            padding: 5px;
+            width: 25%;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid white;
+        }
+
+        .main-button:hover {
+            background-color: lavender;
+            color: black;
+            margin-top: 10px;
+            padding: 5px;
+            width: 25%;
+            font-weight: 600;
+            font-size: 14px;
+            transition: .5s;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .main-button-red:hover {
+            background-color: red;
+            color: black;
+            margin-top: 10px;
+            padding: 5px;
+            width: 25%;
+            font-weight: 600;
+            font-size: 14px;
+            transition: .5s;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

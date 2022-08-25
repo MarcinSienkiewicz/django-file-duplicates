@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="centered">
+    <h1>Duplicated files search.</h1>
+    <h3>Compare files in two locations.</h3> <br>
+    <h4>Specify both paths (absolute) below.<br>
+        Example path:
+        <span style="font-style: oblique; color:aquamarine">C:\Program Files\Windows Defender</span>
+    </h4><br>
+    <span style="color:beige; font-style: oblique;">*Both directories will be checked recursively,<br>so one CAN'T be a
+        subdirectory of another. </span><br> <br>
+
+    <form method="POST" action="{% url 'status' %}"> {% csrf_token %}
+        <input type="text" name="first_path" placeholder="First absolute path..."><br>
+        <input type="text" name="second_path" placeholder="Second absolute path..."> <br> <br>
+        <input type="submit" value="Check">
+    </form>
+</div>
+{% endblock %}

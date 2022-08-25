@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="POST" action="{% url 'main' %}"> {% csrf_token %}
+    <button type="Submit" class="main-button" style="width: 15%">Back to Main</button>
+</form> <br>
+
+<h1>Duplicates search results:</h1> <br>
+{% if count > 0 %}
+<span style="color: orangered; font-size: 22px;">Number of duplicated files found:
+    {{ dupedFiles }} </span><br><br><br>
+{% for key, values in files.items %}
+{{ key }} <br>
+{% for one_dup in values %}
+<span style="margin-left: 50px; color: goldenrod"> &#8594 {{ one_dup }}</span> <br>
+{% endfor %}
+<br><br>
+{% endfor %}
+<br><br>
+<div class="centered-red">
+    <form method="POST"> {% csrf_token %}
+        <button type="Submit" class="main-button-red" style="width: 30%; margin-bottom: 5px; padding:10px">Delete
+            files</button>
+    </form> <span style="color:red;">IRREVERSIBLE action, use caution! No prompt! </span><br>This action will delete
+    <span style="color: goldenrod"> the
+        'yellow'
+        files
+        from the above listing.</span>
+</div>
+
+
+{% else %}
+<br><span style="color:chartreuse">No duplicated files were found in the specified directories.</span><br><br><br>
+{% endif %}
+<br><br>
+<span class="annotation">*Search took: {{ duration }}</span>
+{% endblock %}

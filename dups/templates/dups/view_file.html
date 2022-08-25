@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST"> {% csrf_token %}
+    <button type="Submit" class="main-button" style="width: 15%" name="to-main">Back to Main</button>
+    <button type="Submit" class="main-button" style="width: 15%" name="delete-file">Delete Error File And Back To
+        Main</button>
+</form> <br>
+
+<h1>Error file contents...</h1>
+
+{% for file in issues %}
+{{ file }}<br>
+{% endfor %}
+{% endblock %}

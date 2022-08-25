@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="centered">
+    <h1 style="color: greenyellow">Delete complete.</h1>
+    Number of files deleted: {{ howMany }}<br>
+
+    {% if request.GET.issues == 'True' %}
+    <br>
+    <span style="color:red">There were some issues while deleting.</span><br><br>
+    <span style="text-align: left;">Details in:</span><br>
+    <br> {{ request.GET.file_err }}'
+
+    <form method="POST"> {% csrf_token %}
+        <input type="submit" name="to-main" value="Back to Main">
+        <input type="submit" name="view-errors" value="See Errors">
+    </form>
+    {% else %}
+    <form method="POST"> {% csrf_token %}
+        <input type="submit" name="to-main" value="Back to Main">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
